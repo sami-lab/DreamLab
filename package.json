@@ -1,0 +1,38 @@
+{
+  "name": "nextjs",
+  "version": "4.0.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.10.0",
+    "@wellyshen/use-web-animations": "^0.5.5",
+    "axios": "^0.19.2",
+    "clsx": "latest",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs-extra": "^9.0.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "lodash": "^4.17.19",
+    "next": "latest",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.6.2",
+    "nodemailer": "^6.4.13",
+    "npm": "^6.14.8",
+    "nprogress": "^0.2.0",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-lottie": "^1.2.3",
+    "react-material-ui-carousel": "^2.0.0",
+    "react-rotating-text": "^1.4.1"
+  },
+  "scripts": {
+    "dev": "node server/index.js",
+    "build": "next build",
+    "start": "next start",
+    "postbuild": "node scripts/sitemap.js",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  }
+}

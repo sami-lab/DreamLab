@@ -31,7 +31,8 @@
   "scripts": {
     "dev": "node server/index.js",
     "build": "next build",
-    "start": "next start",
+    "heroku-postbuild": "npm run build",
+    "start": "next start -p $PORT",
     "postbuild": "node scripts/sitemap.js",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   }

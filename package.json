@@ -29,10 +29,10 @@
     "react-rotating-text": "^1.4.1"
   },
   "scripts": {
-    "dev": "node server/index.js",
+    "dev": "next",
     "build": "next build",
     "heroku-postbuild": "npm run build",
-    "start": "node server/index.js -p $PORT",
+    "start": "next start -p $PORT",
     "postbuild": "node scripts/sitemap.js",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   }

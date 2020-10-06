@@ -547,7 +547,7 @@ const Estimate = (props) => {
 
   const sendEstimate = () => {
     setLoading(true);
-    const url = '/sendMail';
+    const url = '/sendmail';
     const contactData = {
       name: name,
       email: email,
@@ -923,8 +923,8 @@ const Estimate = (props) => {
         </Grid>
       </Grid>
       <Dialog
-        modelOpen={openDialog}
-        setModelOpen={() => setOpenDialog(false)}
+        open={openDialog}
+        setopen={() => setOpenDialog(false)}
         fullWidth
         maxWidth="md"
       >

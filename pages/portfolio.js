@@ -226,7 +226,7 @@ const Portfolio = (props) => {
 
   const submitFormHandler = () => {
     setLoading(true);
-    const url = '/sendMail';
+    const url = '/sendmail';
     const contactData = {
       name: name,
       email: email,

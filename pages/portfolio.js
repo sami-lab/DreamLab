@@ -287,8 +287,8 @@ const Portfolio = (props) => {
     </React.Fragment>
   );
   const error = (
-    <Typography gutterBottom variant="h5" align="center">
-      Opps something went Wrong <br /> {props.error}
+    <Typography gutterBottom variant="h5" width="" align="center">
+      Opps something went Wrong <br /> Unable to fetch Data
     </Typography>
   );
   return (
@@ -316,7 +316,6 @@ const Portfolio = (props) => {
         className={[classes.IntroSection, classes.rowContainer].join(' ')}
         justify="center"
         alignItems={matchesSM ? 'center' : undefined}
-        spacing={3}
       >
         <Grid item>
           <Typography
@@ -326,7 +325,11 @@ const Portfolio = (props) => {
           >
             DreamLab Development
           </Typography>
-          <Typography variant="h3" align={matchesSM ? 'center' : undefined}>
+          <Typography
+            variant="h3"
+            style={{ marginTop: '0.3em', marginBottom: '0.3em' }}
+            align={matchesSM ? 'center' : undefined}
+          >
             <ReactRotatingText items={animationText} />
           </Typography>
         </Grid>
@@ -596,7 +599,7 @@ const Portfolio = (props) => {
           container
           justify="center"
           style={{ marginTop: '5em', marginBottom: '5em' }}
-          spacing={2}
+          spacing={1}
         >
           {props.error
             ? error
@@ -604,7 +607,7 @@ const Portfolio = (props) => {
                 .filter((project) => project.type === portfolioSelection)
                 .map((project) => (
                   <Grid item lg={4} md={4} sm={12} key={project.id}>
-                    <Card style={{ height: '25em' }}>
+                    <Card style={{ height: matchesSM ? '100%' : '25em' }}>
                       <CardActionArea
                         component={Link}
                         href="/project/[id]"
@@ -662,7 +665,7 @@ const Portfolio = (props) => {
             <img
               src="/assets/resume.png"
               alt="resume"
-              style={{ width: '100vw' }}
+              style={{ width: '95vw' }}
             />
           </Grid>
         </Grid>
@@ -743,7 +746,7 @@ const Portfolio = (props) => {
                 item
                 style={{
                   marginTop: '2em',
-                  width: '25em',
+                  width: '20em',
                   marginLeft: !matchesMD ? '3em' : '1em',
                 }}
               >
@@ -773,7 +776,7 @@ const Portfolio = (props) => {
                 item
                 style={{
                   marginTop: '2em',
-                  width: '25em',
+                  width: matchesSM ? '20em' : '25em',
                   marginLeft: !matchesMD ? '3em' : '1em',
                 }}
               >
@@ -807,7 +810,7 @@ const Portfolio = (props) => {
                 item
                 style={{
                   marginTop: '2em',
-                  width: '25em',
+                  width: matchesSM ? '20em' : '25em',
                   marginLeft: !matchesMD ? '3em' : '1em',
                 }}
               >
@@ -843,7 +846,7 @@ const Portfolio = (props) => {
                 item
                 style={{
                   marginTop: '2em',
-                  width: '25em',
+                  width: matchesSM ? '20em' : '25em',
                   marginLeft: !matchesMD ? '3em' : '1em',
                 }}
               >

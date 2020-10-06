@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: '1.5em',
       paddingRight: '1.5em',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       paddingLeft: '1em',
       paddingRight: '1em',
     },
@@ -74,11 +74,15 @@ const Project = ({ projectData, error }) => {
           <Grid item container>
             <Grid item>
               <Carousel navButtonsAlwaysVisible={true}>
-                {projectData.imageURL.map((item, i) => (
+                {projectData.imageURL.slice(1).map((item, i) => (
                   <Paper elevation={2} key={i}>
                     <img
                       src={item}
-                      style={{ width: '100vw', height: '85vh' }}
+                      style={{
+                        width: '100vw',
+                        height: matchesMD ? '85vh' : '100%',
+                      }}
+                      alt={projectData.imageTitle}
                     />
                   </Paper>
                 ))}
@@ -90,7 +94,6 @@ const Project = ({ projectData, error }) => {
             item
             container
             direction={matchesSM ? 'column' : 'row'}
-            spacing={matchesSM ? 2 : 0}
             justify="space-between"
             alignItems="center"
             className={classes.rowContainer}
@@ -101,7 +104,7 @@ const Project = ({ projectData, error }) => {
                 Project Details
               </Typography>
             </Grid>
-            <Grid item>
+            <Grid item style={{ marginTop: matchesSM ? '0.5em' : 0 }}>
               <Typography
                 variant="body1"
                 align={matchesSM ? 'center' : undefined}
@@ -127,8 +130,9 @@ const Project = ({ projectData, error }) => {
               marginTop: '5em',
               marginBottom: '5em',
             }}
+            justify={matchesMD ? 'space-around' : undefined}
           >
-            <Grid item container spacing={2} direction="column" md={8}>
+            <Grid item container direction="column" md={8}>
               <Grid item>
                 <Typography
                   variant="h3"
@@ -153,8 +157,8 @@ const Project = ({ projectData, error }) => {
                 {divider}
                 <Typography
                   variant="body1"
-                  gutterBottom
                   align={matchesSM ? 'center' : undefined}
+                  style={{ marginRight: matchesSM ? 0 : '2em' }}
                   paragraph
                 >
                   {projectData.summary}
@@ -168,12 +172,12 @@ const Project = ({ projectData, error }) => {
               direction="column"
               component={Paper}
               elevation={4}
+              spacing={2}
               style={{
-                padding: '2em',
+                padding: matchesSM ? '1em' : '2em',
                 marginTop: matchesSM ? '2em' : 0,
                 marginBottom: matchesSM ? '2em' : 0,
               }}
-              spacing={2}
             >
               <Grid item>
                 <Typography variant="h4">Project information</Typography>
@@ -203,7 +207,7 @@ const Project = ({ projectData, error }) => {
                   <span style={{ fontWeight: 'bolder' }}>Git Url:</span>{' '}
                   {projectData.gitURL ? (
                     <a href={projectData.gitURL} target="_blank">
-                      CLick here
+                      Click here
                     </a>
                   ) : (
                     'Not available'
@@ -213,9 +217,9 @@ const Project = ({ projectData, error }) => {
               <Grid item>
                 <Typography variant="subtitle1">
                   <span style={{ fontWeight: 'bolder' }}>Demo:</span>{' '}
-                  {projectData.gitURL ? (
+                  {projectData.url ? (
                     <a href={projectData.url} target="_blank">
-                      CLick here
+                      Click here
                     </a>
                   ) : (
                     'Not available'

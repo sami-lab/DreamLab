@@ -663,7 +663,7 @@ const Portfolio = (props) => {
         <Grid item container justify="center">
           <Grid item>
             <img
-              src="/assets/resume.png"
+              src="/assets/resume.jpg"
               alt="resume"
               style={{ width: '95vw' }}
             />

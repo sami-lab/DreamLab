@@ -205,8 +205,8 @@ const Project = ({ projectData, error }) => {
               <Grid item>
                 <Typography variant="subtitle1">
                   <span style={{ fontWeight: 'bolder' }}>Git Url:</span>{' '}
-                  {projectData.gitURL ? (
-                    <a href={projectData.gitURL} target="_blank">
+                  {projectData.gitURl ? (
+                    <a href={projectData.gitURl} target="_blank">
                       Click here
                     </a>
                   ) : (

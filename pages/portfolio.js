@@ -746,7 +746,7 @@ const Portfolio = (props) => {
                 item
                 style={{
                   marginTop: '2em',
-                  width: '20em',
+                  width: matchesSM ? '20em' : '25em',
                   marginLeft: !matchesMD ? '3em' : '1em',
                 }}
               >

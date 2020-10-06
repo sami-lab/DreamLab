@@ -13,6 +13,9 @@ app
   .prepare()
   .then(() => {
     const server = express();
+    const path = require('path');
+
+    server.use(express.static(path.resolve(__dirname, '../', 'public')));
     //body parse middleware
     server.use(express.json({ limit: '10kb' }));
     server.post('/sendMail', (req, res) => {

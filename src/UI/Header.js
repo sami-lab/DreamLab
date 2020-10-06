@@ -14,6 +14,7 @@ import {
   ListItem,
   ListItemText,
   Hidden,
+  Typography,
 } from '@material-ui/core';
 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -72,9 +73,11 @@ const useStyles = makeStyles((theme) => ({
   tab: {
     ...theme.typography.tab,
     minWidth: 10,
+    color: 'white',
     marginLeft: '20px',
     '&:hover': {
       textDecoration: 'none',
+      opacity: 1,
     },
   },
   button: {
@@ -235,6 +238,7 @@ export default function Header(props) {
       >
         {routes.map((route, index) => (
           <Tab
+            classes={{ textColorPrimary: 'white' }}
             className={classes.tab}
             key={route.name}
             label={route.name}

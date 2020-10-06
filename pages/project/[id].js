@@ -79,7 +79,7 @@ const Project = ({ projectData, error }) => {
                     <img
                       src={item}
                       style={{
-                        width: '100vw',
+                        width: '95vw',
                         height: matchesMD ? '85vh' : '100%',
                       }}
                       alt={projectData.imageTitle}

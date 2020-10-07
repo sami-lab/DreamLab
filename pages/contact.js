@@ -148,8 +148,16 @@ const Contact = (props) => {
       phone: phone,
       message: message,
     };
-    axios
-      .post(url, contactData)
+    fetch(url, {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(contactData),
+    })
+      .then((response) => response.json())
+      // axios
+      //   .post(url, contactData)
       .then((data) => {
         const { status } = data.data;
         if (status === 'success') {

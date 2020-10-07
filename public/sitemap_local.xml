@@ -4,8 +4,11 @@
     <loc>https://designguro.com/about</loc>
     <lastmod>2020-10-04</lastmod>
   </url>,<url>
+    <loc>https://designguro.com/api/config</loc>
+    <lastmod>2020-10-07</lastmod>
+  </url>,<url>
     <loc>https://designguro.com/api/sendmail</loc>
-    <lastmod>2020-10-06</lastmod>
+    <lastmod>2020-10-07</lastmod>
   </url>,<url>
     <loc>https://designguro.com/contact</loc>
     <lastmod>2020-10-07</lastmod>

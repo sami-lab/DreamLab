@@ -547,7 +547,7 @@ const Estimate = (props) => {
 
   const sendEstimate = () => {
     setLoading(true);
-    const url = '/sendmail';
+    const url = '/api/sendmail';
     const contactData = {
       name: name,
       email: email,

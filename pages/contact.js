@@ -141,25 +141,26 @@ const Contact = (props) => {
   const submitFormHandler = () => {
     setLoading(true);
     // const url = '/sendMail';
-    const url = '/sendmail';
+    const url = '/api/sendmail';
     const contactData = {
       name: name,
       email: email,
       phone: phone,
       message: message,
     };
-    fetch(url, {
-      method: 'POST', // or 'PUT'
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(contactData),
-    })
-      .then((response) => response.json())
-      // axios
-      //   .post(url, contactData)
+    // fetch(url, {
+    //   method: 'POST', // or 'PUT'
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(contactData),
+    // })
+    //   .then((response) => response.json())
+    axios
+      .post(url, contactData)
       .then((data) => {
         const { status } = data.data;
+        console.log(status);
         if (status === 'success') {
           setLoading(false);
           setModelOpen(false);

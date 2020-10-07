@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
-dotenv.config({ path: '../../../config.env' });
+dotenv.config({ path: './config.env' });
 
 export default (req, res) => {
   if (req.method === 'POST') {
@@ -691,7 +691,7 @@ export default (req, res) => {
               {
                 from: process.env.Email, // sender address
                 to: email, // list of receivers
-                subject: 'We have recieved Your estimate request ✔', // Subject line
+                subject: 'Message Recieved ✔ ✔', // Subject line
                 text: `Hello ${name}! Thanks for Contacting us! We have recieved your estimate Request`, // plain text body
                 html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
           <html

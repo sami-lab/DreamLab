@@ -10,7 +10,6 @@
     "axios": "^0.19.2",
     "clsx": "latest",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
     "fs-extra": "^9.0.1",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
@@ -29,7 +28,7 @@
     "react-rotating-text": "^1.4.1"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "heroku-postbuild": "npm run build",
     "start": "next start -p $PORT",

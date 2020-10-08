@@ -4,6 +4,7 @@ dotenv.config({ path: './config.env' });
 
 export default (req, res) => {
   if (req.method === 'POST') {
+    console.log(process.env.Email, req.body);
     const { name, email, phone, message } = req.body;
     const {
       total,

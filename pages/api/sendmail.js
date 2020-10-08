@@ -4,7 +4,7 @@ dotenv.config({ path: './config.env' });
 
 export default (req, res) => {
   if (req.method === 'POST') {
-    console.log(process.env.Email, req.body);
+    console.log(process.env.Email, process.env.SEND_GRID_USERNAME, req.body);
     const { name, email, phone, message } = req.body;
     const {
       total,
@@ -16,11 +16,10 @@ export default (req, res) => {
       category,
     } = req.body;
     let transporter = nodemailer.createTransport({
-      //service: 'gmail',
-      host: 'smtp.gmail.com',
+      service: 'SendGrid',
       auth: {
-        user: process.env.Email, // generated ethereal user
-        pass: process.env.Password, // generated ethereal password
+        user: process.env.SEND_GRID_USERNAME,
+        pass: process.env.SEND_GRID_PASSWORD,
       },
     });
 

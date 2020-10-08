@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     marginLeft: '2em',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       marginLeft: '0em',
     },
   },
@@ -246,7 +246,7 @@ const Home = (props) => {
               />
             </Button>
           </Grid>
-          <Grid item>
+          <Grid item style={{ marginTop: matchesSM ? '1em' : 0 }}>
             <img
               alt="custom Software Development"
               className={classes.icon}
@@ -292,7 +292,10 @@ const Home = (props) => {
           </Grid>
           <Grid
             item
-            style={{ marginRight: matchesSM ? '0em' : '5em', marginTop: '2px' }}
+            style={{
+              marginRight: matchesSM ? '0em' : '5em',
+              marginTop: matchesSM ? '1em' : 0,
+            }}
           >
             <img
               alt="Mobile App Development"
@@ -344,7 +347,7 @@ const Home = (props) => {
               />
             </Button>
           </Grid>
-          <Grid item style={{ marginTop: '2px' }}>
+          <Grid item style={{ marginTop: '1em' }}>
             <img
               alt="Website Development"
               className={classes.icon}

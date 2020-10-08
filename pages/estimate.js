@@ -438,7 +438,7 @@ const Estimate = (props) => {
     switch (e.target.id) {
       case 'email':
         setEmail(e.target.value);
-        valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+        valid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
           e.target.value
         );
         if (!valid) {
@@ -449,7 +449,7 @@ const Estimate = (props) => {
         break;
       case 'phone':
         setPhone(e.target.value);
-        valid = /^(\+{0,})(\d{0,})([(]{1}\d{1,3}[)]{0,}){0,}(\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}(\s){0,}$/gm.test(
+        valid = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/gm.test(
           e.target.value
         );
         if (!valid) {

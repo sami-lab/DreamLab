@@ -11,6 +11,8 @@ import {
   useMediaQuery,
 } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import useWebAnimations from '@wellyshen/use-web-animations';
+import { bounceInRight, bounceInLeft } from '@wellyshen/use-web-animations';
 
 import Link from '../../src/Link';
 
@@ -35,7 +37,13 @@ const Project = ({ projectData, error }) => {
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
+
+  const { ref } = useWebAnimations({
+    ...bounceInLeft,
+  });
+  const { ref: text } = useWebAnimations({
+    ...bounceInRight,
+  });
 
   const divider = (
     <Divider
@@ -46,8 +54,8 @@ const Project = ({ projectData, error }) => {
         marginBottom: '1em',
         marginTop: '1em',
         display: 'block',
-        marginLeft: matchesMD ? 'auto' : undefined,
-        marginRight: matchesMD ? 'auto' : undefined,
+        marginLeft: matchesSM ? 'auto' : undefined,
+        marginRight: matchesSM ? 'auto' : undefined,
       }}
     />
   );
@@ -79,7 +87,7 @@ const Project = ({ projectData, error }) => {
                     <img
                       src={item}
                       style={{
-                        width: '95vw',
+                        width: '99vw',
                         height: matchesMD ? '85vh' : '100%',
                       }}
                       alt={projectData.imageTitle}
@@ -132,7 +140,7 @@ const Project = ({ projectData, error }) => {
             }}
             justify={matchesMD ? 'space-around' : undefined}
           >
-            <Grid item container direction="column" md={8}>
+            <Grid item container direction="column" md={8} ref={ref}>
               <Grid item>
                 <Typography
                   variant="h3"
@@ -158,7 +166,10 @@ const Project = ({ projectData, error }) => {
                 <Typography
                   variant="body1"
                   align={matchesSM ? 'center' : undefined}
-                  style={{ marginRight: matchesSM ? 0 : '2em' }}
+                  style={{
+                    marginRight: matchesSM ? 0 : '2em',
+                    maxWidth: matchesSM ? undefined : '90%',
+                  }}
                   paragraph
                 >
                   {projectData.summary}
@@ -178,6 +189,7 @@ const Project = ({ projectData, error }) => {
                 marginTop: matchesSM ? '2em' : 0,
                 marginBottom: matchesSM ? '2em' : 0,
               }}
+              ref={text}
             >
               <Grid item>
                 <Typography variant="h4">Project information</Typography>
@@ -204,10 +216,10 @@ const Project = ({ projectData, error }) => {
               </Grid>
               <Grid item>
                 <Typography variant="subtitle1">
-                  <span style={{ fontWeight: 'bolder' }}>Git Url:</span>{' '}
+                  <span style={{ fontWeight: 'bolder' }}>Github:</span>{' '}
                   {projectData.gitURl ? (
                     <a href={projectData.gitURl} target="_blank">
-                      Click here
+                      Click
                     </a>
                   ) : (
                     'Not available'
@@ -219,7 +231,7 @@ const Project = ({ projectData, error }) => {
                   <span style={{ fontWeight: 'bolder' }}>Demo:</span>{' '}
                   {projectData.url ? (
                     <a href={projectData.url} target="_blank">
-                      Click here
+                      Click
                     </a>
                   ) : (
                     'Not available'

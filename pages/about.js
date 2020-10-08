@@ -29,8 +29,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   profile: {
-    height: '25em',
-    width: '25em',
+    height: '22em',
+    width: '22em',
     [theme.breakpoints.down('sm')]: {
       height: '20em',
       width: '20em',
@@ -266,27 +266,29 @@ const About = (props) => {
               </Typography>
             </Grid>
           </Hidden>
-          <Grid
-            item
-            container
-            lg
-            direction="column"
-            alignItems={matchesMD ? 'center' : 'flex-end'}
-          >
-            <Grid item>
-              <img
-                src="/assets/founder1.jpg"
-                style={{
-                  borderRadius: '10%',
-                  maxWidth: matchesMD ? 300 : undefined,
-                }}
-                alt="Profile"
-              />
+          <Hidden smDown>
+            <Grid
+              item
+              container
+              lg
+              direction="column"
+              alignItems={matchesMD ? 'center' : 'flex-end'}
+            >
+              <Grid item>
+                <img
+                  src="/assets/founder1.jpg"
+                  style={{
+                    borderRadius: '10%',
+                    maxWidth: matchesMD ? 300 : undefined,
+                  }}
+                  alt="Profile"
+                />
+              </Grid>
+              <Grid item>
+                <Typography variant="caption">A Photo of Founder</Typography>
+              </Grid>
             </Grid>
-            <Grid item>
-              <Typography variant="caption">A Photo of Founder</Typography>
-            </Grid>
-          </Grid>
+          </Hidden>
         </Grid>
       </Grid>
       <Grid item>

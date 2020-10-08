@@ -125,41 +125,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const projectData = [
-  {
-    id: 1,
-    imageURL: ['/assets/founder1.jpg'],
-    imageTitle: 'Mobile Store System',
-    title: 'Mobile Store Management System',
-    url: '',
-    gitURl: '',
-    description: '',
-    client: 'None',
-    type: 0,
-  },
-  {
-    id: 2,
-    imageURL: ['/assets/founder1.jpg'],
-    imageTitle: 'Mobile Store System',
-    title: 'Burger Maker',
-    url: '',
-    gitURl: '',
-    description: '',
-    client: 'None',
-    type: 0,
-  },
-  {
-    id: 3,
-    imageURL: ['/assets/founder1.jpg'],
-    imageTitle: 'Mobile Store System',
-    title: 'Software House Web',
-    url: '',
-    gitURl: '',
-    description: '',
-    client: 'None',
-    type: 0,
-  },
-];
 const Portfolio = (props) => {
   const { ref } = useWebAnimations({
     ...bounceInLeft,
@@ -173,7 +138,6 @@ const Portfolio = (props) => {
   const [portfolioSelection, setPortfolioSelection] = useState(0);
   const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -606,7 +570,7 @@ const Portfolio = (props) => {
             : props.portfolioData
                 .filter((project) => project.type === portfolioSelection)
                 .map((project) => (
-                  <Grid item lg={4} md={4} sm={12} key={project.id}>
+                  <Grid item lg={4} md={4} sm={12} xs={12} key={project.id}>
                     <Card style={{ height: matchesSM ? '100%' : '25em' }}>
                       <CardActionArea
                         component={Link}

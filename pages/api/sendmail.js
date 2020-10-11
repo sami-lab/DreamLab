@@ -277,7 +277,7 @@ export default (req, res) => {
                                   <tr>
                                     <td align="center">
                                       <a
-                                        href="http://www.arcsoftwaredevelopment.com/"
+                                        href="https://dreamlab-development.vercel.app/"
                                         target="_blank"
                                       >
                                         <img
@@ -892,7 +892,7 @@ export default (req, res) => {
                                   <tr>
                                     <td align="center">
                                       <a
-                                        href="http://www.arcsoftwaredevelopment.com/"
+                                        href="https://dreamlab-development.vercel.app/"
                                         target="_blank"
                                       >
                                         <img

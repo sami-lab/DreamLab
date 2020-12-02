@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "dreamlab-development.vercel.app",
+  "Id": "dc79a396-8137-4cc9-b70b-117eff9669b0"
+}

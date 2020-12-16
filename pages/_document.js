@@ -8,23 +8,27 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta charSet="utf-8"/>
+          <meta charSet="utf-8" />
           <link rel="shortcut icon" href="favicon.png" />
-          
+
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <meta property="og:type" content="website"/>
-          <meta property="og:image" content="https://res.cloudinary.com/dxnoiuj66/image/upload/v1597862910/logo_vkkxqq.svg"/>
-          <meta property="og:image:type" content="image/svg"/>
-          <meta property="og:image:width" content="1200"/>
-          <meta property="og:image:height" content="630"/>
-          <meta property="og:image:alt" content="Company logo"/>
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/dxnoiuj66/image/upload/v1597862910/logo_vkkxqq.svg"
+          />
+          <meta property="og:image:type" content="image/svg" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content="Company logo" />
           <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:100,400,400i,700|Roboto:300,400,500,700&display=swap"
-    />
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:100,400,400i,700|Roboto:300,400,500,700&display=swap"
+          />
+          <script type="text/javascript" src="/static/tawk.js"></script>
         </Head>
-        <body style={{margin: 0}}>
+        <body style={{ margin: 0 }}>
           <Main />
           <NextScript />
         </body>
@@ -72,6 +76,9 @@ MyDocument.getInitialProps = async (ctx) => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
+    styles: [
+      ...React.Children.toArray(initialProps.styles),
+      sheets.getStyleElement(),
+    ],
   };
 };

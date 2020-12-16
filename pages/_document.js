@@ -23,12 +23,7 @@ export default class MyDocument extends Document {
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:100,400,400i,700|Roboto:300,400,500,700&display=swap"
     />
-        </Head>
-        <body style={{margin: 0}}>
-          <Main />
-          <NextScript />
- 
-<script type="text/javascript">
+      <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -39,6 +34,12 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
+        </Head>
+        <body style={{margin: 0}}>
+          <Main />
+          <NextScript />
+ 
+
 
         </body>
       </Html>

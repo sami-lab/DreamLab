@@ -1,5 +1,4 @@
-const axios = require('axios');
-import formidable from 'formidable';
+const formidable = require('formidable-serverless');
 var cloudinary = require('cloudinary').v2;
 cloudinary.config({
   cloud_name: 'dxnoiuj66',
@@ -16,9 +15,8 @@ export default (req, res) => {
   if (req.method === 'POST') {
     //const { video, logo } = req.file;
     const form = new formidable.IncomingForm();
-    form.uploadDir = './';
-    form.keepExtensions = true;
     form.parse(req, (err, fields, files) => {
+      console.log(files.video);
       const { client, gitURL, imageTitle, summary, title, type, url } = fields;
       cloudinary.uploader.upload(
         files.video.path,

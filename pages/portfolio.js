@@ -579,7 +579,7 @@ const Portfolio = (props) => {
                       >
                         <CardMedia
                           style={{ height: '20em' }}
-                          image={project.imageURL[0]}
+                          image={project.logo}
                           title={project.imageTitle}
                         />
                         <CardContent>

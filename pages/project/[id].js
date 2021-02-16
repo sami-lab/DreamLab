@@ -79,7 +79,7 @@ const Project = ({ projectData, error }) => {
       {!error ? (
         <Grid container direction="column">
           {/* Slides */}
-          <Grid item container>
+          {/* <Grid item container>
             <Grid item>
               <Carousel navButtonsAlwaysVisible={true}>
                 {projectData.imageURL.slice(1).map((item, i) => (
@@ -96,7 +96,7 @@ const Project = ({ projectData, error }) => {
                 ))}
               </Carousel>
             </Grid>
-          </Grid>
+          </Grid> */}
           {/* Introduction */}
           <Grid
             item
@@ -238,6 +238,26 @@ const Project = ({ projectData, error }) => {
                   )}
                 </Typography>
               </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid item container justify="center">
+            <Grid item>
+              <Paper elevation={2}>
+                <video
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    alignSelf: 'center',
+                  }}
+                  controls
+                  autoPlay="false"
+                  alt={projectData.imageTitle}
+                >
+                  <source src={projectData.video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </Paper>
             </Grid>
           </Grid>
         </Grid>

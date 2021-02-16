@@ -10,22 +10,11 @@ module.exports = withPlugins([
   ],
 
   // your other plugins here
-  {
-    api: {
-      bodyParser: {
-        sizeLimit: '10mb',
-      },
-    },
-  },
+  // {
+  //   api: {
+  //     bodyParser: {
+  //       sizeLimit: '10mb',
+  //     },
+  //   },
+  // },
 ]);
-
-// module.exports = optimizedImages({
-//   /* config for next-optimized-images */
-
-//   // your config for other plugins or the general next.js here...
-//   api: {
-//     bodyParser: {
-//       sizeLimit: '15mb',
-//     },
-//   },
-// });

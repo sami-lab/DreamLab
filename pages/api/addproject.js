@@ -1,9 +1,9 @@
 const formidable = require('formidable-serverless');
 var cloudinary = require('cloudinary').v2;
 cloudinary.config({
-  cloud_name: 'dxnoiuj66',
-  api_key: '422366598495569',
-  api_secret: 'LWjcOL9Zgh0X64Q1hz_e6Fcpt50',
+  cloud_name: '',
+  api_key: '',
+  api_secret: '',
 });
 export const config = {
   api: {

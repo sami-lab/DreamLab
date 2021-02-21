@@ -82,6 +82,9 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: theme.palette.secondary.light,
     },
+    [theme.breakpoints.down('sm')]: {
+      marginRight: 0,
+    },
   },
   learnMoreButton: {
     ...theme.typography.learnButton,
@@ -300,6 +303,8 @@ const Portfolio = (props) => {
         <Grid
           item
           container
+          direction={matchesSM ? 'column' : 'row'}
+          alignItems={matchesSM ? 'center' : undefined}
           justify={matchesMD ? 'center' : undefined}
           className={classes.buttonContainer}
         >
@@ -314,7 +319,7 @@ const Portfolio = (props) => {
               Contact now!
             </Button>
           </Grid>
-          <Grid item>
+          <Grid item style={{ marginTop: matchesSM ? '1em' : 0 }}>
             <Button
               variant="outlined"
               onClick={() => props.setValue(3)}
@@ -601,7 +606,7 @@ const Portfolio = (props) => {
         style={{ marginTop: '2em' }}
         className={classes.rowContainer}
       >
-        <Grid item>
+        <Grid item style={{ alignSelf: matchesSM ? 'center' : 'left' }}>
           <Typography
             variant="h1"
             style={{ fontFamily: 'Pacifico' }}
@@ -614,8 +619,10 @@ const Portfolio = (props) => {
           <Typography
             gutterBottom
             variant="caption"
-            align={matchesMD ? 'center' : undefined}
-            style={{ fontWeight: 700, marginTop: '0.5em' }}
+            style={{
+              fontWeight: 700,
+              marginTop: '2em',
+            }}
             component="a"
             download
             href="/assets/Resume.pdf"
@@ -625,9 +632,9 @@ const Portfolio = (props) => {
           </Typography>
         </Grid>
         <Grid item container justify="center">
-          <Grid item>
+          {/* <Grid item>
             <img src="/assets/cv.jpg" alt="resume" style={{ width: '95vw' }} />
-          </Grid>
+          </Grid> */}
         </Grid>
       </Grid>
       {/* contact */}

@@ -246,8 +246,8 @@ const Project = ({ projectData, error }) => {
               <Paper elevation={2}>
                 <video
                   style={{
-                    width: '100%',
-                    height: '100%',
+                    width: '95vw',
+                    height: '90vh',
                     alignSelf: 'center',
                   }}
                   controls

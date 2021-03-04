@@ -359,6 +359,25 @@ const Portfolio = (props) => {
             gutterBottom
             variant="body1"
             align={matchesMD ? 'center' : undefined}
+            style={{
+              fontWeight: 700,
+              fontStyle: 'italic',
+              marginBottom: '0.2em',
+            }}
+            paragraph
+          >
+            Hi there, I'm Muhammad Sami👋 I'm a Student, Developer, and Learner!
+            I love to code and solve problems i am ASP net core and MERN stack
+            developer with Skilled in conceptualizing, designing, development,
+            and deploying software containing logical and mathematical solutions
+            to business problems. So Feel free to discuss your needs and get a
+            free opinion for possible solution of your requirements as per
+            latest technology tools and trends.
+          </Typography>
+          <Typography
+            gutterBottom
+            variant="body1"
+            align={matchesMD ? 'center' : undefined}
             style={{ fontWeight: 700, fontStyle: 'italic' }}
             paragraph
           >
@@ -449,7 +468,7 @@ const Portfolio = (props) => {
               <Grid item style={{ marginLeft: '1em' }}>
                 <Typography variant="subtitle1">
                   <span style={{ fontWeight: 'bolder' }}>- IDEs: </span>
-                  Visual Studio, Visual Code
+                  Visual Studio, Visual Code, Android Studio
                 </Typography>
                 <Typography variant="subtitle1">
                   <span style={{ fontWeight: 'bolder' }}>- Languages: </span>
@@ -457,15 +476,15 @@ const Portfolio = (props) => {
                 </Typography>
                 <Typography variant="subtitle1">
                   <span style={{ fontWeight: 'bolder' }}>- Process: </span>
-                  GitHub,Trello,Slack etc
+                  GitHub,Trello,Slack,discord,asana etc
                 </Typography>
                 <Typography variant="subtitle1">
                   <span style={{ fontWeight: 'bolder' }}>- Back end: </span>
-                  aspnet Core | NodeJS along with expressJS.
+                  aspnet Core | NodeJS along with expressJS, Apollo Server.
                 </Typography>
                 <Typography variant="subtitle1">
                   <span style={{ fontWeight: 'bolder' }}>- Front end: </span>
-                  React or Razor Pages.
+                  React with JSX, React with tsx or Razor Pages.
                 </Typography>
                 <Typography variant="subtitle1">
                   <span style={{ fontWeight: 'bolder' }}>- UI Designing: </span>

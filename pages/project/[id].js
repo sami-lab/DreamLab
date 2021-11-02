@@ -251,7 +251,7 @@ const Project = ({ projectData, error }) => {
                     alignSelf: 'center',
                   }}
                   controls
-                  autoPlay="false"
+                  autoPlay={false}
                   alt={projectData.imageTitle}
                 >
                   <source src={projectData.video} type="video/mp4" />

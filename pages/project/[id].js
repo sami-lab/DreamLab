@@ -1,6 +1,6 @@
-import React from 'react';
-import Carousel from 'react-material-ui-carousel';
-import Head from 'next/head';
+import React from "react";
+import Carousel from "react-material-ui-carousel";
+import Head from "next/head";
 
 import {
   Grid,
@@ -9,34 +9,34 @@ import {
   Divider,
   LinearProgress,
   useMediaQuery,
-} from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import useWebAnimations from '@wellyshen/use-web-animations';
-import { bounceInRight, bounceInLeft } from '@wellyshen/use-web-animations';
+} from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import useWebAnimations from "@wellyshen/use-web-animations";
+import { bounceInRight, bounceInLeft } from "@wellyshen/use-web-animations";
 
-import Link from '../../src/Link';
+import Link from "../../src/Link";
 
 const useStyles = makeStyles((theme) => ({
   rowContainer: {
-    paddingLeft: '5em',
-    paddingRight: '5em',
+    paddingLeft: "5em",
+    paddingRight: "5em",
     marginTop: 0,
     paddingTop: 0,
-    [theme.breakpoints.down('sm')]: {
-      paddingLeft: '1.5em',
-      paddingRight: '1.5em',
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "1.5em",
+      paddingRight: "1.5em",
     },
-    [theme.breakpoints.down('xs')]: {
-      paddingLeft: '1em',
-      paddingRight: '1em',
+    [theme.breakpoints.down("xs")]: {
+      paddingLeft: "1em",
+      paddingRight: "1em",
     },
   },
 }));
 const Project = ({ projectData, error }) => {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
-  const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
   const { ref } = useWebAnimations({
     ...bounceInLeft,
@@ -48,14 +48,14 @@ const Project = ({ projectData, error }) => {
   const divider = (
     <Divider
       style={{
-        maxWidth: '20%',
-        height: '0.5em',
+        maxWidth: "20%",
+        height: "0.5em",
         backgroundColor: theme.palette.common.blue,
-        marginBottom: '1em',
-        marginTop: '1em',
-        display: 'block',
-        marginLeft: matchesSM ? 'auto' : undefined,
-        marginRight: matchesSM ? 'auto' : undefined,
+        marginBottom: "1em",
+        marginTop: "1em",
+        display: "block",
+        marginLeft: matchesSM ? "auto" : undefined,
+        marginRight: matchesSM ? "auto" : undefined,
       }}
     />
   );
@@ -68,13 +68,20 @@ const Project = ({ projectData, error }) => {
           key="description"
           content="Completely custom designed and built from scratch to be blazing fast. Optimized code, server-side-rendering, and perfect responsive design | 99% PageSpeed Score "
         />
-        <meta
+        {/* <meta
           property="og:title"
           content="Bringing West Coast Technology to the MiddleEast | Websites"
           key="og:title"
         />
-        <meta property="og:url" content="/project/[id]" key="og:url" />
+        <meta property="og:url" content="/project/[id]" key="og:url" /> */}
         <link rel="canonical" key="canonical" href="/project/[id]" />
+
+        <meta
+          property="og:title"
+          content={`${projectData.title} - DreamLab Development`}
+        />
+        <meta property="og:description" content={projectData?.summary} />
+        <meta property="og:image" content={`${projectData?.logo}`} />
       </Head>
       {!error ? (
         <Grid container direction="column">
@@ -101,23 +108,23 @@ const Project = ({ projectData, error }) => {
           <Grid
             item
             container
-            direction={matchesSM ? 'column' : 'row'}
+            direction={matchesSM ? "column" : "row"}
             justify="space-between"
             alignItems="center"
             className={classes.rowContainer}
-            style={{ marginTop: '2em' }}
+            style={{ marginTop: "2em" }}
           >
             <Grid item>
-              <Typography variant="h3" align={matchesSM ? 'center' : undefined}>
+              <Typography variant="h3" align={matchesSM ? "center" : undefined}>
                 Project Details
               </Typography>
             </Grid>
-            <Grid item style={{ marginTop: matchesSM ? '0.5em' : 0 }}>
+            <Grid item style={{ marginTop: matchesSM ? "0.5em" : 0 }}>
               <Typography
                 variant="body1"
-                align={matchesSM ? 'center' : undefined}
+                align={matchesSM ? "center" : undefined}
               >
-                <Link href="/portfolio" style={{ fontWeight: 'bolder' }}>
+                <Link href="/portfolio" style={{ fontWeight: "bolder" }}>
                   <a> Portfolio </a>
                 </Link>
                 / {projectData.title}
@@ -131,21 +138,21 @@ const Project = ({ projectData, error }) => {
           <Grid
             item
             container
-            direction={matchesSM ? 'column' : 'row'}
+            direction={matchesSM ? "column" : "row"}
             alignItems="center"
             className={classes.rowContainer}
             style={{
-              marginTop: '5em',
-              marginBottom: '5em',
+              marginTop: "5em",
+              marginBottom: "5em",
             }}
-            justify={matchesMD ? 'space-around' : undefined}
+            justify={matchesMD ? "space-around" : undefined}
           >
             <Grid item container direction="column" md={8} ref={ref}>
               <Grid item>
                 <Typography
                   variant="h3"
                   color="secondary"
-                  align={matchesSM ? 'center' : undefined}
+                  align={matchesSM ? "center" : undefined}
                 >
                   {projectData.title}
                 </Typography>
@@ -154,10 +161,10 @@ const Project = ({ projectData, error }) => {
               <Grid item>
                 <Typography
                   variant="h3"
-                  align={matchesSM ? 'center' : undefined}
+                  align={matchesSM ? "center" : undefined}
                   style={{
-                    fontWeight: 'bolder',
-                    fontSize: '3rem',
+                    fontWeight: "bolder",
+                    fontSize: "3rem",
                   }}
                 >
                   Summary
@@ -165,10 +172,10 @@ const Project = ({ projectData, error }) => {
                 {divider}
                 <Typography
                   variant="body1"
-                  align={matchesSM ? 'center' : undefined}
+                  align={matchesSM ? "center" : undefined}
                   style={{
-                    marginRight: matchesSM ? 0 : '2em',
-                    maxWidth: matchesSM ? undefined : '90%',
+                    marginRight: matchesSM ? 0 : "2em",
+                    maxWidth: matchesSM ? undefined : "90%",
                   }}
                   paragraph
                 >
@@ -185,9 +192,9 @@ const Project = ({ projectData, error }) => {
               elevation={4}
               spacing={2}
               style={{
-                padding: matchesSM ? '1em' : '2em',
-                marginTop: matchesSM ? '2em' : 0,
-                marginBottom: matchesSM ? '2em' : 0,
+                padding: matchesSM ? "1em" : "2em",
+                marginTop: matchesSM ? "2em" : 0,
+                marginBottom: matchesSM ? "2em" : 0,
               }}
               ref={text}
             >
@@ -199,42 +206,42 @@ const Project = ({ projectData, error }) => {
               </Grid>
               <Grid item>
                 <Typography variant="subtitle1">
-                  <span style={{ fontWeight: 'bolder' }}>Category:</span>{' '}
+                  <span style={{ fontWeight: "bolder" }}>Category:</span>{" "}
                   {projectData.type === 0
-                    ? 'Website'
+                    ? "Website"
                     : projectData.type === 1
-                    ? 'Mobile App'
-                    : 'Custom Software'}
+                    ? "Mobile App"
+                    : "Custom Software"}
                 </Typography>
               </Grid>
               <Grid item>
                 <Typography variant="subtitle1">
-                  {' '}
-                  <span style={{ fontWeight: 'bolder' }}>Client:</span>{' '}
+                  {" "}
+                  <span style={{ fontWeight: "bolder" }}>Client:</span>{" "}
                   {projectData.client}
                 </Typography>
               </Grid>
               <Grid item>
                 <Typography variant="subtitle1">
-                  <span style={{ fontWeight: 'bolder' }}>Github:</span>{' '}
+                  <span style={{ fontWeight: "bolder" }}>Github:</span>{" "}
                   {projectData.gitURl ? (
                     <a href={projectData.gitURl} target="_blank">
                       Click
                     </a>
                   ) : (
-                    'Not available'
+                    "Not available"
                   )}
                 </Typography>
               </Grid>
               <Grid item>
                 <Typography variant="subtitle1">
-                  <span style={{ fontWeight: 'bolder' }}>Demo:</span>{' '}
+                  <span style={{ fontWeight: "bolder" }}>Demo:</span>{" "}
                   {projectData.url ? (
                     <a href={projectData.url} target="_blank">
                       Click
                     </a>
                   ) : (
-                    'Not available'
+                    "Not available"
                   )}
                 </Typography>
               </Grid>
@@ -246,9 +253,9 @@ const Project = ({ projectData, error }) => {
               <Paper elevation={2}>
                 <video
                   style={{
-                    width: '95vw',
-                    height: '90vh',
-                    alignSelf: 'center',
+                    width: "95vw",
+                    height: "90vh",
+                    alignSelf: "center",
                   }}
                   controls
                   autoPlay={false}
@@ -276,7 +283,7 @@ const Project = ({ projectData, error }) => {
 
 // This function gets called at build time
 export async function getStaticPaths() {
-  const url = 'https://dreamlab-development.firebaseio.com/portfolioData.json';
+  const url = "https://dreamlab-development.firebaseio.com/portfolioData.json";
   const res = await fetch(url);
   const data = await res.json();
   // Get the paths we want to pre-render based on posts

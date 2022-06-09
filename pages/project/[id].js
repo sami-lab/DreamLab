@@ -76,12 +76,25 @@ const Project = ({ projectData, error }) => {
         <meta property="og:url" content="/project/[id]" key="og:url" /> */}
         <link rel="canonical" key="canonical" href="/project/[id]" />
 
-        <meta
+        {/* <meta
           property="og:title"
           content={`${projectData.title} - DreamLab Development`}
         />
         <meta property="og:description" content={projectData?.summary} />
-        <meta property="og:image" content={`${projectData?.logo}`} />
+        <meta property="og:image" content={`${projectData?.logo}`} /> */}
+
+        <meta
+          property="og:title"
+          content={`Cleaning Business Web - DreamLab Development`}
+        />
+        <meta
+          property="og:description"
+          content="Cleaning Business Website developed using React-Nextjs and material UI"
+        />
+        <meta
+          property="og:image"
+          content={`https://dreamlab-development.vercel.app/assets/webProjects/abcCleaning/logo.JPG`}
+        />
       </Head>
       {!error ? (
         <Grid container direction="column">

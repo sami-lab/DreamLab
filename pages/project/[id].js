@@ -74,7 +74,11 @@ const Project = ({ projectData, error }) => {
           key="og:title"
         />
       */}
-        <link rel="canonical" key="canonical" href="/project/[id]" />
+        <link
+          rel="canonical"
+          key="canonical"
+          href={`/project/${projectData.id}`}
+        />
 
         {/* <meta
           property="og:title"

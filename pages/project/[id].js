@@ -73,7 +73,7 @@ const Project = ({ projectData, error }) => {
           content="Bringing West Coast Technology to the MiddleEast | Websites"
           key="og:title"
         />
-        <meta property="og:url" content="/project/[id]" key="og:url" /> */}
+      */}
         <link rel="canonical" key="canonical" href="/project/[id]" />
 
         {/* <meta
@@ -82,7 +82,11 @@ const Project = ({ projectData, error }) => {
         />
         <meta property="og:description" content={projectData?.summary} />
         <meta property="og:image" content={`${projectData?.logo}`} /> */}
-
+        <meta
+          property="og:url"
+          content={`/project/${projectData.id}`}
+          key="og:url"
+        />
         <meta
           property="og:title"
           content={`Cleaning Business Web - DreamLab Development`}

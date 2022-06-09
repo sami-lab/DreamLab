@@ -90,7 +90,10 @@ const Project = ({ projectData, error }) => {
           content={`${projectData.title} - DreamLab Development`}
         />
         <meta property="og:description" content={projectData?.summary} />
-        <meta property="og:image" content={`${projectData?.logo}`} />
+        <meta
+          property="og:image"
+          content={`https://dreamlab-development.vercel.app${projectData?.logo}`}
+        />
       </Head>
       {!error ? (
         <Grid container direction="column">
